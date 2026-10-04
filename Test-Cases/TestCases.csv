@@ -1,0 +1,76 @@
+Test Case ID,Module,Test Title,Preconditions,Test Steps,Test Data,Expected Result,Actual Result,Status,Priority,Test Type
+TC_LOG_001,Authentication,Verify login with standard valid credentials,User is on login page (https://www.saucedemo.com/),"1. Enter 'standard_user' into Username field.
+2. Enter 'secret_sauce' into Password field.
+3. Click 'Login' button.","Username: standard_user, Password: secret_sauce",User is successfully logged in and redirected to Inventory page ('/inventory.html'). Products list is displayed.,Pending Execution,Pending,High,Functional / Positive
+TC_LOG_002,Authentication,Verify login failure with locked-out user credentials,User is on login page,"1. Enter 'locked_out_user' into Username field.
+2. Enter 'secret_sauce' into Password field.
+3. Click 'Login' button.","Username: locked_out_user, Password: secret_sauce","Error message displayed: 'Epic sadface: Sorry, this user has been locked out.' User remains on login page.",Pending Execution,Pending,High,Functional / Negative
+TC_LOG_003,Authentication,Verify login failure with invalid password,User is on login page,"1. Enter 'standard_user' into Username field.
+2. Enter 'wrong_password' into Password field.
+3. Click 'Login' button.","Username: standard_user, Password: wrong_password",Error message displayed: 'Epic sadface: Username and password do not match any user in this service'.,Pending Execution,Pending,High,Functional / Negative
+TC_LOG_004,Authentication,Verify login validation when Username field is empty,User is on login page,"1. Leave Username field blank.
+2. Enter 'secret_sauce' into Password field.
+3. Click 'Login' button.","Username: [EMPTY], Password: secret_sauce",Error message displayed: 'Epic sadface: Username is required'. Field highlight error icons appear.,Pending Execution,Pending,Medium,Validation / Negative
+TC_LOG_005,Authentication,Verify login validation when Password field is empty,User is on login page,"1. Enter 'standard_user' into Username field.
+2. Leave Password field blank.
+3. Click 'Login' button.","Username: standard_user, Password: [EMPTY]",Error message displayed: 'Epic sadface: Password is required'.,Pending Execution,Pending,Medium,Validation / Negative
+TC_LOG_006,Authentication,Verify login validation when both Username and Password fields are empty,User is on login page,"1. Leave Username field blank.
+2. Leave Password field blank.
+3. Click 'Login' button.","Username: [EMPTY], Password: [EMPTY]",Error message displayed: 'Epic sadface: Username is required'.,Pending Execution,Pending,Medium,Validation / Negative
+TC_LOG_007,Authentication,Verify behavior of problematic user account ('problem_user'),User is on login page,"1. Enter 'problem_user' into Username field.
+2. Enter 'secret_sauce' into Password field.
+3. Click 'Login' button.","Username: problem_user, Password: secret_sauce","User logs in, but product images display broken image paths (or duplicate images).",Pending Execution,Pending,Medium,Functional / Edge
+TC_LOG_008,Authentication,Verify login performance with delay user ('performance_glitch_user'),User is on login page,"1. Enter 'performance_glitch_user' into Username field.
+2. Enter 'secret_sauce' into Password field.
+3. Click 'Login' button.","Username: performance_glitch_user, Password: secret_sauce",User is eventually logged in successfully to inventory page despite noticeable loading delay.,Pending Execution,Pending,Low,Performance / Edge
+TC_INV_001,Product Listing,Verify inventory page elements upon successful login,User is logged in as 'standard_user',"1. Observe header bar, title ('Swag Labs'), shopping cart icon, menu button, and product catalog grid.",N/A,"All 6 items are correctly displayed with title, image, description, price, and 'Add to cart' buttons.",Pending Execution,Pending,High,UI / Functional
+TC_INV_002,Product Listing,Verify navigation to Product Detail page by clicking product title,User is on Inventory page,1. Click on item title 'Sauce Labs Backpack'.,Item: Sauce Labs Backpack,"User is navigated to detail page ('inventory-item.html?id=4') displaying large image, title, detailed description, $29.99 price, and Back to products button.",Pending Execution,Pending,High,Functional / Positive
+TC_INV_003,Product Listing,Verify 'Back to products' button functionality on item detail page,User is on Product Detail page for any item,1. Click 'Back to products' button.,N/A,User is redirected back to the main inventory catalog page.,Pending Execution,Pending,Medium,Functional / Positive
+TC_SRT_001,Product Sorting,Verify product sorting by Name (A to Z),User is on Inventory page,1. Select 'Name (A to Z)' from sorting dropdown filter top right.,Sort Option: Name (A to Z),"Products are sorted alphabetically ascending from A to Z (First: Sauce Labs Backpack, Last: Test.allTheThings() T-Shirt (Red)).",Pending Execution,Pending,High,Functional / Positive
+TC_SRT_002,Product Sorting,Verify product sorting by Name (Z to A),User is on Inventory page,1. Select 'Name (Z to A)' from sorting dropdown filter.,Sort Option: Name (Z to A),Products are sorted alphabetically descending from Z to A (First: Test.allTheThings() T-Shirt (Red)).,Pending Execution,Pending,Medium,Functional / Positive
+TC_SRT_003,Product Sorting,Verify product sorting by Price (low to high),User is on Inventory page,1. Select 'Price (low to high)' from sorting dropdown filter.,Sort Option: Price (low to high),"Products are arranged by price ascending (First item $7.99 Sauce Labs Onesie, Last item $49.99 Sauce Labs Fleece Jacket).",Pending Execution,Pending,High,Functional / Positive
+TC_SRT_004,Product Sorting,Verify product sorting by Price (high to low),User is on Inventory page,1. Select 'Price (high to low)' from sorting dropdown filter.,Sort Option: Price (high to low),"Products are arranged by price descending (First item $49.99 Sauce Labs Fleece Jacket, Last item $7.99 Sauce Labs Onesie).",Pending Execution,Pending,Medium,Functional / Positive
+TC_CRT_001,Shopping Cart,Verify adding a single item to cart from inventory page,User is on Inventory page with empty cart,1. Click 'Add to cart' on 'Sauce Labs Backpack'.,Item: Sauce Labs Backpack,"Button changes to 'Remove', and shopping cart badge counter updates to '1'.",Pending Execution,Pending,High,Functional / Positive
+TC_CRT_002,Shopping Cart,Verify adding multiple items to cart,User is on Inventory page,"1. Click 'Add to cart' on 'Sauce Labs Backpack'.
+2. Click 'Add to cart' on 'Sauce Labs Bike Light'.
+3. Click 'Add to cart' on 'Sauce Labs Bolt T-Shirt'.","Items: Backpack, Bike Light, Bolt T-Shirt",Cart badge displays '3'. All selected items show 'Remove' button.,Pending Execution,Pending,High,Functional / Positive
+TC_CRT_003,Shopping Cart,Verify removing an item from cart on inventory page,User has 2 items in cart,1. Click 'Remove' button on 'Sauce Labs Backpack'.,Item: Sauce Labs Backpack,"Button label reverts to 'Add to cart', and cart badge counter decrements to '1'.",Pending Execution,Pending,High,Functional / Positive
+TC_CRT_004,Shopping Cart,Verify navigating to Cart page and inspecting listed items,User added 2 items to cart,1. Click shopping cart icon at top right.,N/A,"User is navigated to '/cart.html'. Page displays quantity, item title, description, and price for both items.",Pending Execution,Pending,High,Functional / Positive
+TC_CRT_005,Shopping Cart,Verify removing item from within Cart page,User is on Cart page with 2 items,1. Click 'Remove' button next to 'Sauce Labs Bike Light'.,Item: Sauce Labs Bike Light,"Item is removed from list, cart badge updates from '2' to '1'.",Pending Execution,Pending,High,Functional / Positive
+TC_CRT_006,Shopping Cart,Verify 'Continue Shopping' button functionality in Cart,User is on Cart page,1. Click 'Continue Shopping' button.,N/A,User is navigated back to Inventory page with cart items preserved.,Pending Execution,Pending,Medium,Functional / Positive
+TC_CHK_001,Checkout,Verify navigation to Checkout Step 1 from Cart page,User has at least 1 item in cart and is on Cart page,1. Click 'Checkout' button.,N/A,"User is navigated to 'Checkout: Your Information' ('/checkout-step-one.html'). First Name, Last Name, and Zip/Postal Code fields are displayed.",Pending Execution,Pending,High,Functional / Positive
+TC_CHK_002,Checkout,Verify successful submission of valid Checkout Information,User is on Checkout Step 1 page,"1. Enter 'John' into First Name.
+2. Enter 'Doe' into Last Name.
+3. Enter '90210' into Zip/Postal Code.
+4. Click 'Continue' button.","First Name: John, Last Name: Doe, Zip: 90210",User is navigated to 'Checkout: Overview' ('/checkout-step-two.html').,Pending Execution,Pending,High,Functional / Positive
+TC_CHK_003,Checkout,Verify checkout validation when First Name is empty,User is on Checkout Step 1 page,"1. Leave First Name blank.
+2. Enter 'Doe' in Last Name.
+3. Enter '90210' in Zip Code.
+4. Click 'Continue'.","First Name: [EMPTY], Last Name: Doe, Zip: 90210",Error message displayed: 'Error: First Name is required'.,Pending Execution,Pending,High,Validation / Negative
+TC_CHK_004,Checkout,Verify checkout validation when Last Name is empty,User is on Checkout Step 1 page,"1. Enter 'John' in First Name.
+2. Leave Last Name blank.
+3. Enter '90210' in Zip Code.
+4. Click 'Continue'.","First Name: John, Last Name: [EMPTY], Zip: 90210",Error message displayed: 'Error: Last Name is required'.,Pending Execution,Pending,High,Validation / Negative
+TC_CHK_005,Checkout,Verify checkout validation when Postal Code is empty,User is on Checkout Step 1 page,"1. Enter 'John' in First Name.
+2. Enter 'Doe' in Last Name.
+3. Leave Zip Code blank.
+4. Click 'Continue'.","First Name: John, Last Name: Doe, Zip: [EMPTY]",Error message displayed: 'Error: Postal Code is required'.,Pending Execution,Pending,High,Validation / Negative
+TC_CHK_006,Checkout,Verify 'Cancel' button on Checkout Step 1 page,User is on Checkout Step 1 page,1. Click 'Cancel' button.,N/A,User is navigated back to Cart page ('/cart.html').,Pending Execution,Pending,Medium,Functional / Positive
+TC_CHK_007,Checkout Overview,"Verify Item total, Tax, and Total calculation accuracy",User has Backpack ($29.99) and Bike Light ($9.99) in Checkout Overview,"1. Inspect Item total price.
+2. Inspect Tax amount (8%).
+3. Inspect Total price.",Items: $29.99 + $9.99 = $39.98,"Item total shows '$39.98', Tax shows '$3.20', Total shows '$43.18'. Calculation is mathematically correct.",Pending Execution,Pending,High,Functional / Calculation
+TC_CHK_008,Checkout Overview,Verify Payment Information and Shipping Information display,User is on Checkout Overview page,"1. Inspect Payment Information section.
+2. Inspect Shipping Information section.",N/A,Displays 'SauceCard #31337' and 'Free Delivery Same Day!'.,Pending Execution,Pending,Low,UI / Information
+TC_CHK_009,Checkout Overview,Verify completing order by clicking Finish button,User is on Checkout Overview page,1. Click 'Finish' button.,N/A,User is navigated to 'Checkout: Complete!' ('/checkout-complete.html'). Header 'Thank you for your order!' and dispatch message displayed.,Pending Execution,Pending,High,Functional / Positive
+TC_CHK_010,Checkout Complete,Verify 'Back Home' button on order completion page,User is on Checkout Complete page,1. Click 'Back Home' button.,N/A,User is navigated back to Inventory catalog page. Cart badge reset to empty.,Pending Execution,Pending,High,Functional / Positive
+TC_CHK_011,Checkout Overview,Verify 'Cancel' button on Checkout Overview page,User is on Checkout Overview page,1. Click 'Cancel' button.,N/A,User is redirected to Inventory catalog page.,Pending Execution,Pending,Medium,Functional / Positive
+TC_NAV_001,Navigation Menu,Verify sidebar menu expansion and options display,User is on any page after login,1. Click top-left burger menu icon (3 horizontal lines).,N/A,"Sidebar slides out displaying links: 'All Items', 'About', 'Logout', 'Reset App State', and close button (X).",Pending Execution,Pending,Medium,UI / Functional
+TC_NAV_002,Navigation Menu,Verify 'All Items' menu link functionality,User is on Cart or Checkout page with menu open,1. Click 'All Items' link in side menu.,N/A,User is navigated to Inventory catalog page ('/inventory.html').,Pending Execution,Pending,Medium,Functional / Positive
+TC_NAV_003,Navigation Menu,Verify 'Reset App State' menu link functionality,User has items in cart,"1. Open side menu.
+2. Click 'Reset App State'.",N/A,Shopping cart counter is cleared to 0 and all 'Remove' buttons revert back to 'Add to cart'.,Pending Execution,Pending,Medium,Functional / State Reset
+TC_NAV_004,Navigation Menu,Verify successful Logout from side menu,User is logged in on any page,"1. Open side menu.
+2. Click 'Logout' link.",N/A,User session ends and user is redirected back to Login page ('https://www.saucedemo.com/').,Pending Execution,Pending,High,Functional / Security
+TC_SEC_001,Security,Verify direct URL access restriction without active session,User is not logged in / browser in private window,1. Directly paste 'https://www.saucedemo.com/inventory.html' into browser URL bar and press Enter.,URL: https://www.saucedemo.com/inventory.html,Access blocked. User redirected to login page with error: 'Epic sadface: You can only access '/inventory.html' when you are logged in.',Pending Execution,Pending,High,Security / Direct Access
+TC_SEC_002,Security,Verify browser Back button behavior after logging out,"User logged in, then logged out via side menu",1. Click browser 'Back' button after reaching login page.,N/A,User is unable to access authenticated pages or sees session expired error; cannot perform cart/checkout actions.,Pending Execution,Pending,High,Security / Session
+TC_SEC_003,Edge Cases,Verify checkout attempt with empty cart,User is logged in with 0 items in cart,"1. Navigate to cart page ('/cart.html').
+2. Click 'Checkout' button.",Cart size: 0,Application should prevent checkout or display validation message 'Cart is empty'. (Or document existing application behavior).,Pending Execution,Pending,Medium,Boundary / Edge Case

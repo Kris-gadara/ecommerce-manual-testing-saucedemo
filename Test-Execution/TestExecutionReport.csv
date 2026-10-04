@@ -1,0 +1,40 @@
+Test Case ID,Module,Test Title,Priority,Execution Date,Executed By,Execution Status,Defect ID Linked,Notes / Observations
+TC_LOG_001,Authentication,Verify login with standard valid credentials,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_LOG_002,Authentication,Verify login failure with locked-out user credentials,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_LOG_003,Authentication,Verify login failure with invalid password,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_LOG_004,Authentication,Verify login validation when Username field is empty,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_LOG_005,Authentication,Verify login validation when Password field is empty,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_LOG_006,Authentication,Verify login validation when both Username and Password fields are empty,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_LOG_007,Authentication,Verify behavior of problematic user account ('problem_user'),Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_LOG_008,Authentication,Verify login performance with delay user ('performance_glitch_user'),Low,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_INV_001,Product Listing,Verify inventory page elements upon successful login,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_INV_002,Product Listing,Verify navigation to Product Detail page by clicking product title,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_INV_003,Product Listing,Verify 'Back to products' button functionality on item detail page,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_SRT_001,Product Sorting,Verify product sorting by Name (A to Z),High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_SRT_002,Product Sorting,Verify product sorting by Name (Z to A),Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_SRT_003,Product Sorting,Verify product sorting by Price (low to high),High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_SRT_004,Product Sorting,Verify product sorting by Price (high to low),Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CRT_001,Shopping Cart,Verify adding a single item to cart from inventory page,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CRT_002,Shopping Cart,Verify adding multiple items to cart,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CRT_003,Shopping Cart,Verify removing an item from cart on inventory page,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CRT_004,Shopping Cart,Verify navigating to Cart page and inspecting listed items,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CRT_005,Shopping Cart,Verify removing item from within Cart page,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CRT_006,Shopping Cart,Verify 'Continue Shopping' button functionality in Cart,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_001,Checkout,Verify navigation to Checkout Step 1 from Cart page,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_002,Checkout,Verify successful submission of valid Checkout Information,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_003,Checkout,Verify checkout validation when First Name is empty,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_004,Checkout,Verify checkout validation when Last Name is empty,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_005,Checkout,Verify checkout validation when Postal Code is empty,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_006,Checkout,Verify 'Cancel' button on Checkout Step 1 page,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_007,Checkout Overview,"Verify Item total, Tax, and Total calculation accuracy",High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_008,Checkout Overview,Verify Payment Information and Shipping Information display,Low,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_009,Checkout Overview,Verify completing order by clicking Finish button,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_010,Checkout Complete,Verify 'Back Home' button on order completion page,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_CHK_011,Checkout Overview,Verify 'Cancel' button on Checkout Overview page,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_NAV_001,Navigation Menu,Verify sidebar menu expansion and options display,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_NAV_002,Navigation Menu,Verify 'All Items' menu link functionality,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_NAV_003,Navigation Menu,Verify 'Reset App State' menu link functionality,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_NAV_004,Navigation Menu,Verify successful Logout from side menu,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_SEC_001,Security,Verify direct URL access restriction without active session,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_SEC_002,Security,Verify browser Back button behavior after logging out,High,Pending,Tester Name,Pending,-,Awaiting manual test execution.
+TC_SEC_003,Edge Cases,Verify checkout attempt with empty cart,Medium,Pending,Tester Name,Pending,-,Awaiting manual test execution.
