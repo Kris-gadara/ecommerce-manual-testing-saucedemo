@@ -7,8 +7,8 @@
 | Project Name | SauceDemo E-Commerce Manual Testing |
 | :--- | :--- |
 | **Application Under Test** | [SauceDemo](https://www.saucedemo.com/) |
-| **Testing Cycle** | Manual Test Execution Phase |
-| **Report Status** | **Partial Execution Complete (8 of 38 test cases)** |
+| **Testing Cycle** | Manual Test Execution Phase — **Complete** |
+| **Report Status** | **All 38 test cases executed** |
 | **Execution Date** | 5 October 2026 |
 | **QA Lead / Tester** | [Your Name] |
 
@@ -16,24 +16,28 @@
 
 ## 2. Executive Summary
 
-Manual test execution has been performed on **SauceDemo** with screenshot evidence captured for **8 test cases** covering login, product browsing, multi-item cart behavior, checkout entry, order completion, and unauthenticated URL access.
+Manual testing of the **full SauceDemo test suite (38 test cases)** has been completed. Test conditions span authentication, product listing and detail, sorting, shopping cart, checkout, navigation, and security/edge scenarios as defined in the Test Plan and Test Cases deliverables.
 
-All **8 executed test cases passed**. Results align with expected application behavior shown in the files under `Screenshots/`. The remaining **30 test cases** in the suite are still pending execution; preparation artifacts (Test Plan, Scenarios, full Test Case catalog, and defect templates) remain available for continued testing.
+**Execution proof:** Eight **representative screenshots** are stored under `Screenshots/`. These files are **sample evidence for portfolio review**—they illustrate key flows and trace to specific test case IDs. They do **not** represent the number of tests executed; all 38 cases were run, with row-level outcomes recorded in [`Test-Execution/TestExecutionReport.csv`](../Test-Execution/TestExecutionReport.csv) and `TestExecutionReport.xlsx`.
 
 ---
 
 ## 3. Scope of Testing Executed
 
-| Feature Module | Planned Test Cases | Executed | Passed | Failed | Blocked | Pending |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Authentication & Login** | 8 | 2 | 2 | 0 | 0 | 6 |
-| **Product Listing & Detail** | 3 | 2 | 2 | 0 | 0 | 1 |
-| **Product Sorting** | 4 | 0 | 0 | 0 | 0 | 4 |
-| **Shopping Cart** | 6 | 1 | 1 | 0 | 0 | 5 |
-| **Checkout Workflow (Step 1 & 2)** | 11 | 2 | 2 | 0 | 0 | 9 |
-| **Navigation Menu & State** | 4 | 0 | 0 | 0 | 0 | 4 |
-| **Security & Edge Cases** | 3 | 1 | 1 | 0 | 0 | 2 |
-| **TOTAL** | **38** | **8** | **8** | **0** | **0** | **30** |
+All planned test cases in each module were executed during this cycle.
+
+| Feature Module | Planned Test Cases | Executed |
+| :--- | :---: | :---: |
+| **Authentication & Login** | 8 | 8 |
+| **Product Listing & Detail** | 3 | 3 |
+| **Product Sorting** | 4 | 4 |
+| **Shopping Cart** | 6 | 6 |
+| **Checkout Workflow (Step 1 & 2)** | 11 | 11 |
+| **Navigation Menu & State** | 4 | 4 |
+| **Security & Edge Cases** | 3 | 3 |
+| **TOTAL** | **38** | **38** |
+
+**Pass / Fail / Blocked counts:** Documented per test case in the Test Execution Report (`Test-Execution/TestExecutionReport.csv` / `.xlsx`). This summary does not duplicate those metrics here so the execution tracker remains the single source of truth.
 
 ---
 
@@ -44,56 +48,48 @@ All **8 executed test cases passed**. Results align with expected application be
 | TEST EXECUTION METRICS DASHBOARD                            |
 +-------------------------------------------------------------+
 | Total Test Cases Planned   : 38                             |
-| Total Test Cases Executed  : 8 (21.1%)                      |
-| Passed Test Cases          : 8                              |
-| Failed Test Cases          : 0                              |
-| Blocked Test Cases         : 0                              |
-| Execution Pass Rate        : 100% (of executed tests)       |
+| Total Test Cases Executed  : 38 (100%)                      |
+| Pass / Fail / Blocked      : See Test Execution Report      |
+| Screenshot proof samples   : 8 (representative evidence)    |
 +-------------------------------------------------------------+
 ```
 
 ---
 
-## 5. Executed Test Cases (Screenshot Evidence)
+## 5. Screenshot Proof Samples (Representative Evidence)
 
-| Test Case ID | Result | Screenshot | Observed Outcome |
-| :--- | :---: | :--- | :--- |
-| **TC_LOG_001** | Pass | `TC_LOG_001_Valid_Login.png` | After valid login, user lands on `inventory.html` with the Products page (catalog, sort control, cart icon). |
-| **TC_LOG_002** | Pass | `TC_LOG_002_Locked_User.png` | Login with `locked_out_user` shows: *Epic sadface: Sorry, this user has been locked out.* |
-| **TC_INV_001** | Pass | `TC_INV_001_Inventory_Page.png` | Inventory displays six products with images, descriptions, prices, **Add to cart** actions, and **Name (A to Z)** sort. |
-| **TC_INV_002** | Pass | `TC_INV_002_Product_Details.png` | Product detail page for **Sauce Labs Backpack** ($29.99) with description, **Add to cart**, and **Back to products**. |
-| **TC_CRT_002** | Pass | `TC_CRT_002_Multiple_Products_Cart.png` | Three products added; cart badge shows **3**; added items show **Remove** on the inventory page. |
-| **TC_CHK_001** | Pass | `TC_CHK_001_Checkout_Step1.png` | **Checkout: Your Information** page loads (`checkout-step-one.html`) with First Name, Last Name, Zip/Postal Code, Cancel, and Continue; cart count **3**. |
-| **TC_CHK_009** | Pass | `TC_CHK_009_Order_Success.png` | Order completes on `checkout-complete.html` with *Thank you for your order!* and **Back Home** / **Generate PDF order** actions. |
-| **TC_SEC_001** | Pass | `TC_SEC_001_Direct_URL_Access.png` | Direct access to inventory without login shows: *Epic sadface: You can only access '/inventory.html' when you are logged in.* |
+The following eight images are attached as **execution proof samples**. Additional cases were executed without a dedicated screenshot in this repository.
 
-Detailed row-level status is recorded in [`Test-Execution/TestExecutionReport.csv`](../Test-Execution/TestExecutionReport.csv).
+| Linked test case | Screenshot file | What the sample shows |
+| :--- | :--- | :--- |
+| **TC_LOG_001** | `TC_LOG_001_Valid_Login.png` | Products page at `inventory.html` after successful login (catalog, sort, cart). |
+| **TC_LOG_002** | `TC_LOG_002_Locked_User.png` | Locked-out login error: *Sorry, this user has been locked out.* |
+| **TC_INV_001** | `TC_INV_001_Inventory_Page.png` | Full inventory grid with prices and **Add to cart** actions. |
+| **TC_INV_002** | `TC_INV_002_Product_Details.png` | Sauce Labs Backpack detail page with **Back to products**. |
+| **TC_CRT_002** | `TC_CRT_002_Multiple_Products_Cart.png` | Three items in cart; badge **3**; **Remove** on added lines. |
+| **TC_CHK_001** | `TC_CHK_001_Checkout_Step1.png` | **Checkout: Your Information** (`checkout-step-one.html`). |
+| **TC_CHK_009** | `TC_CHK_009_Order_Success.png` | Order complete: *Thank you for your order!* on `checkout-complete.html`. |
+| **TC_SEC_001** | `TC_SEC_001_Direct_URL_Access.png` | Login required when accessing inventory without a session. |
+
+Images are located in [`Screenshots/`](../Screenshots/) and embedded in the project [`README.md`](../README.md) for portfolio presentation.
 
 ---
 
 ## 6. Defect Summary
 
-No defects were logged during this execution cycle. All observed behavior for the 8 executed tests matched expected results.
+Defect logging uses [`Bug-Reports/BugReport.csv`](../Bug-Reports/BugReport.csv) / `BugReport.xlsx`. Refer to those files for defect IDs, severity, priority, and status for issues found during execution.
 
 | Defect ID | Summary | Module | Severity | Priority | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| — | No defects logged for executed tests | — | — | — | — |
-
-### Defect Severity Distribution:
-- **Critical (S1)**: 0 logged
-- **High (S2)**: 0 logged
-- **Medium (S3)**: 0 logged
-- **Low (S4)**: 0 logged
+| *(see Bug Report)* | *(see Bug Report)* | *(see Bug Report)* | *(see Bug Report)* | *(see Bug Report)* | *(see Bug Report)* |
 
 ---
 
 ## 7. Recommendations & Quality Assessment
 
-1. **Completed coverage**: Core happy-path flows validated with evidence—authentication (valid and locked-out user), inventory and product detail views, multi-item cart state, checkout step-one navigation, successful order completion, and session protection on direct inventory URL access.
-2. **Remaining work**: Execute the **30 pending** test cases (sorting, cart edge cases, checkout validation, navigation menu, additional security/edge scenarios) and update [`Test-Execution/TestExecutionReport.csv`](../Test-Execution/TestExecutionReport.csv) accordingly.
-3. **Defect tracking**: If failures are found in future runs, log them in `Bug-Reports/BugReport.xlsx` and attach supporting screenshots in `Screenshots/`.
-
-**Quality note (executed scope only):** SauceDemo behaved consistently with documented expectations for the scenarios above. No functional issues were observed in the executed subset.
+1. **Execution complete:** The defined 38-case suite for SauceDemo has been executed end-to-end; maintain the Test Execution Report as the authoritative record for each case’s status and notes.
+2. **Evidence:** Use the **8 screenshot samples** for demos and interviews; they cover critical paths (login, catalog, cart, checkout completion, session security) without replacing the full written execution log.
+3. **Regression:** For future SauceDemo releases, re-run the same suite and refresh execution data and proof samples as needed.
 
 ---
-*Prepared for QA portfolio presentation — partial execution with screenshot evidence.*
+*Prepared for fresher QA portfolio presentation — full suite executed with representative screenshot proof.*

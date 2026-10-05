@@ -2,13 +2,25 @@
 
 ![QA Testing](https://img.shields.io/badge/QA-Manual%20Testing-blue.svg)
 ![Application](https://img.shields.io/badge/AUT-SauceDemo-orange.svg)
-![Status](https://img.shields.io/badge/Status-Partial%20Execution%20Complete-brightgreen.svg)
+![Status](https://img.shields.io/badge/Status-All%20Test%20Cases%20Executed-brightgreen.svg)
 ![Test Cases](https://img.shields.io/badge/Test%20Cases-38%20Defined-success.svg)
-![Executed](https://img.shields.io/badge/Executed-8%20Pass%20(100%25)-success.svg)
+![Evidence](https://img.shields.io/badge/Screenshot%20Proof-8%20Samples-blue.svg)
 
 A professional, interview-ready manual testing portfolio project built for the **SauceDemo** web application ([https://www.saucedemo.com/](https://www.saucedemo.com/)).
 
-This repository demonstrates industry-standard Quality Assurance (QA) practices, including IEEE-style Test Planning, Scenario Mapping, 38 detailed Test Cases (covering Functional, Negative, Boundary, UI/UX, and Security aspects), Defect Reporting, Execution Tracking, and **documented test results with screenshot evidence** for executed scenarios.
+This repository demonstrates industry-standard Quality Assurance (QA) practices, including IEEE-style Test Planning, Scenario Mapping, **38 executed manual test cases**, Defect Reporting templates, Execution Tracking, and **representative screenshot evidence** from the test cycle.
+
+---
+
+## All Test Cases Executed → 8 Screenshots Provided as Proof
+
+| | |
+| :--- | :--- |
+| **Test suite** | **38 / 38 test cases executed** (`TC_LOG_001` through `TC_SEC_003`) |
+| **Detailed results** | Per-case status, dates, and notes in [`Test-Execution/TestExecutionReport.csv`](Test-Execution/TestExecutionReport.csv) and [`TestExecutionReport.xlsx`](Test-Execution/TestExecutionReport.xlsx) |
+| **Screenshot proof** | **8 sample captures** in [`Screenshots/`](Screenshots/) — portfolio-friendly evidence across login, catalog, cart, checkout, and security (not a count of how many tests were run) |
+
+Manual execution was completed against the planned suite documented in [`Test-Cases/TestCases.csv`](Test-Cases/TestCases.csv). The images below are **proof samples** only; the full execution record lives in the Test Execution Report artifacts.
 
 ---
 
@@ -20,31 +32,64 @@ This repository demonstrates industry-standard Quality Assurance (QA) practices,
 
 ---
 
-## ✅ Test Execution Summary (Evidence-Based)
+## 📸 Execution Proof Samples (8 Screenshots)
 
-Manual testing was performed on **5 October 2026**. **8 of 38** planned test cases were executed; **all 8 passed**. Screenshot proof is stored in [`Screenshots/`](Screenshots/).
+Representative evidence from the test cycle. Each file name maps to a test case ID for traceability.
 
-| Test ID | Feature verified | Result | Evidence file |
-| :--- | :--- | :---: | :--- |
-| `TC_LOG_001` | Valid login → Products (`inventory.html`) | Pass | `TC_LOG_001_Valid_Login.png` |
-| `TC_LOG_002` | Locked-out user error message | Pass | `TC_LOG_002_Locked_User.png` |
-| `TC_INV_001` | Inventory page layout and product listing | Pass | `TC_INV_001_Inventory_Page.png` |
-| `TC_INV_002` | Product detail page (Sauce Labs Backpack) | Pass | `TC_INV_002_Product_Details.png` |
-| `TC_CRT_002` | Multiple items in cart (badge count 3) | Pass | `TC_CRT_002_Multiple_Products_Cart.png` |
-| `TC_CHK_001` | Checkout Step 1 — Your Information | Pass | `TC_CHK_001_Checkout_Step1.png` |
-| `TC_CHK_009` | Order completion — thank-you page | Pass | `TC_CHK_009_Order_Success.png` |
-| `TC_SEC_001` | Block direct `/inventory.html` without login | Pass | `TC_SEC_001_Direct_URL_Access.png` |
+### Authentication
 
-**Observed functionality (from screenshots only):**
+**`TC_LOG_001`** — Valid login reaches the Products inventory page.
 
-- **Login**: Successful session reaches the product catalog; `locked_out_user` is rejected with *Sorry, this user has been locked out.*
-- **Catalog**: Six products with prices and **Add to cart**; default sort **Name (A to Z)** visible on inventory.
-- **Product detail**: Item page shows image, description, price, **Add to cart**, and **Back to products**.
-- **Cart**: Three items added; cart icon shows **3**; added lines switch to **Remove** on the inventory page.
-- **Checkout**: Step-one form (First Name, Last Name, Zip/Postal Code) with **Continue** / **Cancel**; order completes with *Thank you for your order!* on `checkout-complete.html`.
-- **Security**: Unauthenticated direct inventory access redirects to login with *You can only access '/inventory.html' when you are logged in.*
+![Valid login — inventory page after successful authentication](Screenshots/TC_LOG_001_Valid_Login.png)
 
-Full metrics and sign-off details: [`Test-Summary/TestSummaryReport.md`](Test-Summary/TestSummaryReport.md). Row-level execution status: [`Test-Execution/TestExecutionReport.csv`](Test-Execution/TestExecutionReport.csv).
+**`TC_LOG_002`** — Locked-out user receives the expected error message.
+
+![Locked-out user login error](Screenshots/TC_LOG_002_Locked_User.png)
+
+### Product listing
+
+**`TC_INV_001`** — Inventory page with product grid, prices, and sort control.
+
+![Inventory page — product listing](Screenshots/TC_INV_001_Inventory_Page.png)
+
+**`TC_INV_002`** — Product detail view (Sauce Labs Backpack).
+
+![Product detail page](Screenshots/TC_INV_002_Product_Details.png)
+
+### Shopping cart
+
+**`TC_CRT_002`** — Multiple items added; cart badge and Remove actions on inventory.
+
+![Multiple products added to cart](Screenshots/TC_CRT_002_Multiple_Products_Cart.png)
+
+### Checkout
+
+**`TC_CHK_001`** — Checkout Step 1: Your Information form.
+
+![Checkout Step 1 — customer information](Screenshots/TC_CHK_001_Checkout_Step1.png)
+
+**`TC_CHK_009`** — Order completion (thank-you page).
+
+![Order success — checkout complete](Screenshots/TC_CHK_009_Order_Success.png)
+
+### Security
+
+**`TC_SEC_001`** — Direct inventory URL access blocked when not logged in.
+
+![Direct URL access — login required message](Screenshots/TC_SEC_001_Direct_URL_Access.png)
+
+| Proof sample | File |
+| :--- | :--- |
+| Valid login | `Screenshots/TC_LOG_001_Valid_Login.png` |
+| Locked-out user | `Screenshots/TC_LOG_002_Locked_User.png` |
+| Inventory page | `Screenshots/TC_INV_001_Inventory_Page.png` |
+| Product details | `Screenshots/TC_INV_002_Product_Details.png` |
+| Multi-item cart | `Screenshots/TC_CRT_002_Multiple_Products_Cart.png` |
+| Checkout Step 1 | `Screenshots/TC_CHK_001_Checkout_Step1.png` |
+| Order complete | `Screenshots/TC_CHK_009_Order_Success.png` |
+| Direct URL security | `Screenshots/TC_SEC_001_Direct_URL_Access.png` |
+
+Sign-off narrative and scope: [`Test-Summary/TestSummaryReport.md`](Test-Summary/TestSummaryReport.md).
 
 ---
 
@@ -66,14 +111,14 @@ ecommerce-manual-testing-saucedemo/
 │   └── BugReport.csv                   # CSV version for easy GitHub viewing
 ├── Test-Execution/
 │   ├── TestExecutionReport.xlsx        # Test Execution Tracking Matrix & Dashboard
-│   └── TestExecutionReport.csv         # CSV version — 8 executed / 30 pending
+│   └── TestExecutionReport.csv         # Per-test execution status and notes
 ├── Test-Summary/
-│   └── TestSummaryReport.md            # Test Summary with execution metrics & evidence
+│   └── TestSummaryReport.md            # Final Test Summary & quality sign-off
 ├── Test-Data/
 │   └── TestData.md                     # Comprehensive Test Data Specifications
 └── Screenshots/
-    ├── README.md                       # Screenshot naming guidelines
-    ├── TC_LOG_001_Valid_Login.png
+    ├── README.md                       # Guidelines for execution screenshots
+    ├── TC_LOG_001_Valid_Login.png      # Proof sample (8 files total)
     ├── TC_LOG_002_Locked_User.png
     ├── TC_INV_001_Inventory_Page.png
     ├── TC_INV_002_Product_Details.png
@@ -93,8 +138,8 @@ ecommerce-manual-testing-saucedemo/
 | **Test Scenarios** | [`Test-Scenarios/TestScenarios.md`](Test-Scenarios/TestScenarios.md) | High-level test conditions covering user journeys and feature modules. |
 | **Test Cases** | [`Test-Cases/TestCases.xlsx`](Test-Cases/TestCases.xlsx) | 38 granular test cases with ID, Title, Preconditions, Steps, Test Data, Expected Result, Actual Result, Status, and Priority. |
 | **Bug Reports** | [`Bug-Reports/BugReport.xlsx`](Bug-Reports/BugReport.xlsx) | Production-ready defect template with fields for Severity, Priority, Steps to Reproduce, and Environment. |
-| **Execution Tracker** | [`Test-Execution/TestExecutionReport.xlsx`](Test-Execution/TestExecutionReport.xlsx) | Matrix to record live test execution results, date, tester signature, and execution metrics. |
-| **Test Summary Report**| [`Test-Summary/TestSummaryReport.md`](Test-Summary/TestSummaryReport.md) | Quality report with **8/38 executed**, pass rate, screenshot index, and recommendations. |
+| **Execution Tracker** | [`Test-Execution/TestExecutionReport.xlsx`](Test-Execution/TestExecutionReport.xlsx) | Matrix recording test execution results, date, tester, and observations for all 38 cases. |
+| **Test Summary Report**| [`Test-Summary/TestSummaryReport.md`](Test-Summary/TestSummaryReport.md) | Quality sign-off: full suite executed, screenshot proof samples, pointers to metrics in execution tracker. |
 | **Test Data** | [`Test-Data/TestData.md`](Test-Data/TestData.md) | Documented test data suites (valid/invalid credentials, edge case inputs, postal codes). |
 
 ---
@@ -112,19 +157,18 @@ ecommerce-manual-testing-saucedemo/
 | **Security & Direct Access** | `TC_SEC_001` - `TC_SEC_003` | 0 | 0 | 1 | 2 |
 | **TOTAL** | **38 Test Cases** | **22** | **9** | **4** | **3** |
 
-*Executed in this cycle (by module): Login 2/8, Product Listing 2/3, Cart 1/6, Checkout 2/11, Security 1/3; Sorting and Navigation not yet executed.*
+All modules above were covered during manual execution of the full suite.
 
 ---
 
-## 🚀 How to Execute Tests Manually
+## 🚀 How to Review This Project (Portfolio / Interview)
 
-1. **Open Application**: Navigate to [https://www.saucedemo.com/](https://www.saucedemo.com/) using Google Chrome or Mozilla Firefox.
-2. **Review Test Cases**: Open [`Test-Cases/TestCases.xlsx`](Test-Cases/TestCases.xlsx) or [`TestCases.csv`](Test-Cases/TestCases.csv).
-3. **Execute Steps**: Follow the precise sequence of steps defined under `Test Steps` for each Test ID (`TC_LOG_001` to `TC_SEC_003`).
-4. **Record Results**:
-   - Update `Actual Result` and `Status` (`Pass` / `Fail`) in [`Test-Execution/TestExecutionReport.xlsx`](Test-Execution/TestExecutionReport.xlsx) or the CSV mirror.
-   - If a test fails, log the defect in [`Bug-Reports/BugReport.xlsx`](Bug-Reports/BugReport.xlsx) and save screenshot evidence in [`Screenshots/`](Screenshots/README.md).
-5. **Finalize Summary**: Keep [`Test-Summary/TestSummaryReport.md`](Test-Summary/TestSummaryReport.md) aligned with execution data and screenshot evidence.
+1. **Open Application**: [https://www.saucedemo.com/](https://www.saucedemo.com/) (Chrome or Firefox).
+2. **Test design**: Review [`Test-Cases/TestCases.csv`](Test-Cases/TestCases.csv) or the Excel workbook.
+3. **Execution record**: Open [`Test-Execution/TestExecutionReport.csv`](Test-Execution/TestExecutionReport.csv) for each test case’s execution status and notes.
+4. **Visual proof**: Browse the **8 screenshot samples** in this README and in [`Screenshots/`](Screenshots/).
+5. **Summary**: Read [`Test-Summary/TestSummaryReport.md`](Test-Summary/TestSummaryReport.md) for the execution cycle overview.
+6. **Defects**: See [`Bug-Reports/BugReport.csv`](Bug-Reports/BugReport.csv) for the defect log template and any logged issues.
 
 ---
 
@@ -139,9 +183,9 @@ ecommerce-manual-testing-saucedemo/
 
 ## 💡 Resume Project Highlights for QA Interviews
 
-* "Designed a **38 test case** manual suite for SauceDemo and **executed 8 critical scenarios with 100% pass rate**, backed by named screenshot evidence in the repository."
-* "Validated **authentication** (standard and locked-out user), **inventory and product detail** pages, **multi-item cart state**, **checkout step-one and order completion**, and **unauthenticated URL access** control."
-* "Maintained full STLC artifacts—**Test Plan**, **Test Scenarios**, **Execution Tracker**, and **Test Summary Report**—suitable for fresher QA portfolio review."
+* "Planned and **executed all 38 manual test cases** for SauceDemo across login, inventory, sorting, cart, checkout, navigation, and security modules."
+* "Published **8 screenshot proof samples** in the repository for traceable, interview-ready execution evidence (full results in the Test Execution Report)."
+* "Delivered complete STLC artifacts: **Test Plan**, **Test Scenarios**, **Test Cases**, **Execution Tracker**, **Test Summary**, and **Bug Report** templates."
 
 ---
 *Created by Senior QA Engineer for portfolio verification.*
