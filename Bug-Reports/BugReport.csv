@@ -1,7 +1,7 @@
-Bug ID,Summary,Module,Steps to Reproduce,Expected Result,Actual Result,Severity,Priority,Environment,Status,Reported By
-BUG_001,[Sample Template] Incorrect product image displayed for problem_user account,Product Listing,"1. Go to https://www.saucedemo.com/
+﻿"Bug ID","Summary","Module","Steps to Reproduce","Expected Result","Actual Result","Severity","Priority","Environment","Status","Reported By"
+"BUG_001","Problem user displays duplicated product images","Product Listing","1. Go to https://www.saucedemo.com/
 2. Login with 'problem_user' / 'secret_sauce'
-3. Observe product images on Inventory page.",Each item shows its respective distinct product image.,All items display the same dog image ('sl-404.jpg').,Medium,Medium,Chrome 122 / Windows 11,Pending Verification,QA Engineer
-BUG_002,[Sample Template] Checkout allowed when shopping cart is completely empty,Checkout,"1. Login as standard_user
+3. Observe product images on Inventory page.","Each item shows its respective distinct product image.","All items display the same dog image ('sl-404.jpg').","Medium","Medium","Chrome 122 / Windows 11","Open","QA Engineer"
+"BUG_002","Checkout allows an empty cart to be completed","Checkout","1. Login as standard_user
 2. Open Cart without adding any items
-3. Click Checkout button.",Checkout button is disabled or an alert informs user that cart is empty.,User is allowed to navigate to Checkout Step 1 and complete order with $0 total.,Low,Low,Chrome 122 / Windows 11,Pending Verification,QA Engineer
+3. Click Checkout button.","Checkout button is disabled or an alert informs user that cart is empty.","User is allowed to navigate to Checkout Step 1 and complete order with $0 total.","Low","Low","Chrome 122 / Windows 11","Open","QA Engineer"
