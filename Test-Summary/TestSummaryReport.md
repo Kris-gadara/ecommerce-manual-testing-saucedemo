@@ -10,7 +10,7 @@
 | **Testing Cycle** | Manual Test Execution Phase — **Complete** |
 | **Report Status** | **All 38 test cases executed** |
 | **Execution Date** | 5 October 2026 |
-| **QA Lead / Tester** | [Your Name] |
+| **QA Lead / Tester** | [Krish Gadara] |
 
 ---
 
